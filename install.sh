@@ -1,12 +1,13 @@
 #!/data/data/com.termux/files/usr/bin/bash
 termux-setup-storage
 
-apt update
+apt update 
 apt install -y git zsh
-git clone https://github.com/Cabbagec/termux-ohmyzsh.git "$HOME/termux-ohmyzsh" --depth 1
 
-mv "$HOME/.termux" "$HOME/.termux.bak.$(date +%Y.%m.%d-%H:%M:%S)"
-cp -R "$HOME/termux-ohmyzsh/.termux" "$HOME/.termux"
+git clone https://github.com/DEAM0/termux-themes.git "$HOME/termux-themes" --depth 1
+
+mv "$HOME/.termux" "$HOME/.termux.bak.$(date+ %Y.%m.d-%H:%M:%S)"
+cp -R "$HOME/termux-themes/.termux" "$HOME/.termux"
 
 git clone https://github.com/ohmyzsh/ohmyzsh.git "$HOME/.oh-my-zsh" --depth 1
 mv "$HOME/.zshrc" "$HOME/.zshrc.bak.$(date +%Y.%m.%d-%H:%M:%S)"
@@ -21,8 +22,9 @@ echo "source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> "$HO
 
 chsh -s zsh
 
-echo "oh-my-zsh install complete!\nChoose your color scheme now~"
+echo "Termux-Themes complete!\nChoose your color scheme now~"
 $HOME/.termux/colors.sh
+
 
 echo "Choose your font now~"
 $HOME/.termux/fonts.sh
